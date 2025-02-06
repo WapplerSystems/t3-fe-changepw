@@ -1,0 +1,22 @@
+
+
+prototypes:
+  standard:
+    formEditor:
+      translationFiles:
+        1738878704: 'EXT:fe_changepw/Resources/Private/Language/Frontend.xlf'
+
+    formElementsDefinition:
+      Form:
+        renderingOptions:
+          translation:
+            translationFiles:
+              1738878704: 'EXT:fe_changepw/Resources/Private/Language/Frontend.xlf'
+
+    formEngine:
+      translationFiles:
+        1738878704: 'EXT:fe_changepw/Resources/Private/Language/Frontend.xlf'
+
+formManager:
+  translationFiles:
+    1738878704: 'EXT:fe_changepw/Resources/Private/Language/Frontend.xlf'

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2015-02-17T00:33:20Z">
+        <body>
+
+            <trans-unit id="msg.passwordSavedSuccessfully">
+                <source>The new password has been saved.</source>
+                <target>Das neue Passwort wurde gespeichert.</target>
+            </trans-unit>
+
+
+            <trans-unit id="element.password.properties.label">
+                <source>New password</source>
+                <target>Neues Passwort</target>
+            </trans-unit>
+            <trans-unit id="element.password.properties.confirmationLabel">
+                <source>Confirm password</source>
+                <target>Passwort bestätigen</target>
+            </trans-unit>
+            <trans-unit id="passwordForm.element.passwordForm.renderingOptions.submitButtonLabel">
+                <source>Save</source>
+                <target>Speichern</target>
+            </trans-unit>
+
+
+        </body>
+    </file>
+</xliff>

@@ -73,15 +73,18 @@ class PasswordFormFactory extends AbstractFormFactory
 
         /** @var array */
         $feUser = $GLOBALS['TSFE']->fe_user->user;
+        if ($feUser === null) {
+            throw new \RuntimeException('No frontend user found');
+        }
 
         /** @var ConfigurationService $configurationService */
         $configurationService = GeneralUtility::makeInstance(ConfigurationService::class);
         $prototypeConfiguration = $configurationService->getPrototypeConfiguration('standard');
 
         /** @var FormDefinition $formDefinition */
-        $formDefinition = GeneralUtility::makeInstance(FormDefinition::class, 'profileForm', $prototypeConfiguration);
+        $formDefinition = GeneralUtility::makeInstance(FormDefinition::class, 'passwordForm', $prototypeConfiguration);
         $formDefinition->setRendererClassName(FluidFormRenderer::class);
-        $formDefinition->setRenderingOption('controllerAction', 'profile');
+        $formDefinition->setRenderingOption('controllerAction', 'password');
         $formDefinition->setRenderingOption('submitButtonLabel', 'save');
 
 
@@ -94,12 +97,16 @@ class PasswordFormFactory extends AbstractFormFactory
             id: 'password',
             label: 'password',
             properties: [
+                'confirmationLabel' => 'passwordConfirmation',
+            ],
+            validators: [
+                $resolver->createValidator('NotEmpty'),
             ]
         );
 
 
         $formDefinition->createFinisher('FlashMessage', [
-            'messageBody' => LocalizationUtility::translate('LLL:EXT:bga_site/Resources/Private/Language/Frontend.xlf:msg.passwordSavedSuccessfully'),
+            'messageBody' => LocalizationUtility::translate('LLL:EXT:fe_changepw/Resources/Private/Language/Frontend.xlf:msg.passwordSavedSuccessfully'),
             'severity' => ContextualFeedbackSeverity::OK,
             'messageCode' => 1644873735,
         ]);
@@ -109,9 +116,9 @@ class PasswordFormFactory extends AbstractFormFactory
         $saveToUserTableFinisher->setOptions([
             'table' => 'fe_users',
             'mode' => 'update',
-            'pid' => $user->getPid(),
+            'pid' => $feUser['pid'],
             'whereClause' => [
-                'uid' => $user->getUid(),
+                'uid' => $feUser['uid'],
             ],
             'elements' => [
                 'password' => [

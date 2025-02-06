@@ -14,6 +14,7 @@ $EM_CONF[$_EXTKEY] = [
         'depends' => [
             'typo3' => '12.4.0-12.4.99',
             'form' => '12.4.0-12.4.99',
+            'form_extended' => '12.0.0',
         ],
         'conflicts' => [
         ],

@@ -29,7 +29,8 @@
 	],
 	"require": {
 		"typo3/cms-core": "^12",
-		"typo3/cms-form": "^12"
+		"typo3/cms-form": "^12",
+		"wapplersystems/form_extended": "^12"
 	},
 	"autoload": {
 		"psr-4": {
