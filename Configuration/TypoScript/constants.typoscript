@@ -1,0 +1,48 @@
+plugin.tx_fechangepw {
+
+  view {
+    # cat=plugin.tx_fechangepw/file; type=string; label=Path to template root (FE)
+    templateRootPath = EXT:fe_changepw/Resources/Private/Templates/
+    # cat=plugin.tx_fechangepw/file; type=string; label=Path to template partials (FE)
+    partialRootPath = EXT:fe_changepw/Resources/Private/Partials/
+    # cat=plugin.tx_fechangepw/file; type=string; label=Path to template layouts (FE)
+    layoutRootPath = EXT:fe_changepw/Resources/Private/Layouts/
+  }
+
+
+  settings {
+
+    # cat=plugin.tx_fechangepw//u; type=int+; label=Endpoint for validation link
+    validationPid =
+
+    # cat=plugin.tx_fechangepw//a; type=string; label=Sender name
+    senderName = Netzwerkportal für Gründerinnen
+    # cat=plugin.tx_fechangepw//b; type=string; label=Sender email
+    senderAddress = info@bga.de
+
+    # cat=plugin.tx_fechangepw//c; type=string; label=Email address for publishing requests
+    publishingRequestAddress = info@bga.de
+
+    # cat=plugin.tx_fechangepw//d; type=int+; label=Privacy policy page
+    privacyPoliyPage =
+
+    # cat=plugin.tx_fechangepw//e; type=int+; label=Profile Detail Page
+    profileDetailPage =
+
+    # cat=plugin.tx_fechangepw//f; type=int+; label=DbSearch Page
+    dbSearchPage =
+
+    # cat=plugin.tx_fechangepw/other/c; type=int+; label=ID of login page
+    loginPageUID =
+
+    # cat=plugin.tx_fechangepw/other/d; type=int+; label=ID of profile page
+    profilePageUID =
+
+    # cat=plugin.tx_fechangepw/other/e; type=int+; label=ID of password change page
+    passwordChangePageUID =
+
+  }
+}
+
+
+

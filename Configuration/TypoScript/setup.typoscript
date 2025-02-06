@@ -1,0 +1,20 @@
+
+plugin.tx_fechangepw {
+  view {
+    templateRootPaths.0 = EXT:fe_changepw/Resources/Private/Templates/
+    templateRootPaths.10 = {$plugin.tx_fechangepw.view.templateRootPath}
+    partialRootPaths.0 = EXT:fe_changepw/Resources/Private/Partials/
+    partialRootPaths.10 = {$plugin.tx_fechangepw.view.partialRootPath}
+    layoutRootPaths.0 = EXT:fe_changepw/Resources/Private/Layouts/
+    layoutRootPaths.10 = {$plugin.tx_fechangepw.view.layoutRootPath}
+  }
+
+
+  settings {
+
+
+
+  }
+
+}
+
